@@ -13,6 +13,9 @@ RSpec.describe Customer, type: :model do
     subject.last_name=nil
     expect(subject).to_not be_valid
   end
+  it "returns the full name as a concatenation of first_name and last_name" do
+    expect(subject.full_name).to eq "Jack Smith"
+  end
   it "is not valid without a phone number" do
     subject.phone = nil
     expect(subject).to_not be_valid

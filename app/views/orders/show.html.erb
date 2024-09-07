@@ -1,0 +1,21 @@
+<h1>Order Details</h1>
+
+<p>
+  <strong>Product Name:</strong>
+  <%= @order.product_name %>
+</p>
+
+<p>
+  <strong>Product Count:</strong>
+  <%= @order.product_count %>
+</p>
+
+<p>
+  <strong>Customer Count:</strong>
+  <%= @order.customer_id %>
+</p>
+
+<br>
+
+<%= link_to "Edit this order", edit_order_path(@order) %> |
+<%= link_to "Back to orders", orders_path %>
