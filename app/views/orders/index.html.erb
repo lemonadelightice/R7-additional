@@ -1,0 +1,28 @@
+<h1>Orders</h1>
+
+<div class="container-fluid row">
+  <% @orders.each do |order| %>
+    <div class="col-sm">
+      <div class="card border border-2 border-success p-1 mt-3" style="width: 18rem;">
+       
+        <div class="card-header">
+          <h5><%= order.product_name %></h5>
+        </div>
+                
+        <div class="card-body">
+          <p><strong>Quantity:</strong> <%= order.product_count %></p>
+          <p><strong>Customer:</strong> <%= order.customer.first_name %> <%= order.customer.last_name %></p>
+        </div>
+                
+        <div class="card-footer">
+          <%= link_to 'Edit', edit_order_path(order), class: "btn btn-primary btn-sm" %>
+          <%= link_to 'Delete', order_path(order), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
